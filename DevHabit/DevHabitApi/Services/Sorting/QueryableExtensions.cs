@@ -53,3 +53,8 @@ internal static class QueryableExtensions
         return (sortField, IsDescending);
     }
 }
+
+// this sort mapping doing by the System.Linq.Dynamic.Core package
+// and the it apply OrderBy("Name ASC, Description DESC, EndDate DESC") Query
+// https://dynamic-linq.net/basic-simple-query#ordering-results-combining-ascending-and-descending
+
