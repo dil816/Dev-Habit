@@ -8,12 +8,14 @@ using DevHabitApi.DTOs.Habits;
 using DevHabitApi.Services;
 using FluentValidation;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 
 namespace DevHabitApi.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("tags")]
 [Produces(

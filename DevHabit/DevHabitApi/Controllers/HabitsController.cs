@@ -10,12 +10,14 @@ using DevHabitApi.Services;
 using DevHabitApi.Services.Sorting;
 using FluentValidation;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace DevHabitApi.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("habits")]
 [ApiVersion(1.0)]
