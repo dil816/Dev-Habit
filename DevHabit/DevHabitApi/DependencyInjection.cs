@@ -147,6 +147,10 @@ public static class DependencyInjection
 
         builder.Services.AddTransient<TokenProvider>();
 
+        //for user context service
+        builder.Services.AddMemoryCache();
+        builder.Services.AddScoped<UserContext>();
+
         return builder;
     }
 
