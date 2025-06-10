@@ -5,6 +5,7 @@ using DevHabit.Api.Entities;
 using DevHabitApi.Database;
 using DevHabitApi.DTOs.Common;
 using DevHabitApi.DTOs.Habits;
+using DevHabitApi.Entities;
 using DevHabitApi.Services;
 using FluentValidation;
 using FluentValidation.Results;
@@ -15,7 +16,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DevHabitApi.Controllers;
 
-[Authorize]
+[Authorize(Roles = Roles.Member)]
 [ApiController]
 [Route("tags")]
 [Produces(
