@@ -1,4 +1,5 @@
 using DevHabit.Api.Entities;
+using DevHabitApi.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -12,10 +13,16 @@ public sealed class TagConfiguration : IEntityTypeConfiguration<Tag>
 
         builder.Property(t => t.Id).HasMaxLength(500);
 
+        builder.Property(t => t.UserId).HasMaxLength(500);
+
         builder.Property(t => t.Name).IsRequired().HasMaxLength(50);
 
         builder.Property(t => t.Description).HasMaxLength(500);
 
-        builder.HasIndex(t => new { t.Name }).IsUnique();
+        builder.HasIndex(t => new { t.UserId, t.Name }).IsUnique();
+
+        builder.HasOne<User>()
+            .WithMany()
+            .HasForeignKey(t => t.UserId);
     }
 }
