@@ -1,3 +1,3 @@
 # DevHabit
 
-A developer habit tracking system, built with a pragmatic RESTful API.
+A developer habit tracking system, built with a pragmatic RESTful API Practice.
